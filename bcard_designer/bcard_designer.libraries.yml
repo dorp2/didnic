@@ -1,0 +1,21 @@
+{{ attach_library('bcard_designer/bcard_designer') }}
+bcard_designer:
+  version: 1.x
+  css:
+    theme:
+      css/bcard_designer.css: {}
+  js:
+    js/bcard_designer.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+admin:
+  css:
+    theme:
+      css/bcard_designer.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

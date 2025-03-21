@@ -1,0 +1,13 @@
+bcard_designer.admin:
+  title: 'Business Card Designer'
+  description: 'Manage business card designs and assets'
+  parent: system.admin_content
+  route_name: bcard_designer.admin_list
+  weight: 100
+
+bcard_designer.settings:
+  title: 'Business Card Designer Settings'
+  description: 'Configure Business Card Designer module'
+  parent: system.admin_config_content
+  route_name: bcard_designer.settings
+  weight: 10

@@ -1,0 +1,31 @@
+<h1>{{ 'لیست طرح‌های کارت ویزیت' }}</h1>
+<p>
+  <a href="{{ path('entity.card_design.add_form') }}" class="btn btn-primary">{{ 'اضافه کردن طرح جدید' }}</a>
+  <a href="{{ path('bcard_designer.upload_assets') }}" class="btn btn-default">{{ 'آپلود فونت و پس‌زمینه' }}</a>
+  <a href="{{ path('bcard_designer.list_assets') }}" class="btn btn-info">{{ 'مشاهده دارایی‌های آپلود شده' }}</a>
+</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{{ 'نام طرح' }}</th>
+      <th>{{ 'پیش‌نمایش' }}</th>
+      <th>{{ 'عملیات' }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for design in designs %}
+      <tr>
+        <td>{{ design.name }}</td>
+        <td><img src="{{ design.path }}" alt="{{ design.name }}" style="max-width: 100px;"></td>
+        <td>
+          <a href="{{ path('bcard_designer.edit_design', {'id': design.id}) }}" class="btn btn-warning btn-sm">{{ 'ویرایش' }}</a>
+          <a href="{{ path('bcard_designer.delete_design', {'id': design.id}) }}" class="btn btn-danger btn-sm">{{ 'حذف' }}</a>
+        </td>
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="3">{{ 'هیچ طرحی وجود ندارد.' }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Business Card Designer module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_help().
+ */
+function bcard_designer_help(string $route_name, RouteMatchInterface $route_match): ?TranslatableMarkup {
+  switch ($route_name) {
+    case 'help.page.bcard_designer':
+      return new TranslatableMarkup('
+        <h3>@about</h3>
+        <p>@description</p>',
+        [
+          '@about' => 'About',
+          '@description' => 'The Business Card Designer module provides a tool for creating and managing business card designs.',
+        ]
+      );
+  }
+
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bcard_designer_theme(): array {
+  return [
+    'card_designer' => [
+      '#theme' => 'card_designer',
+      '#fonts' => [],
+      '#backgrounds' => [],
+    ],
+    'admin_card_designs' => [
+      '#theme' => 'admin_card_designs',
+      '#designs' => [],
+    ],
+    'admin_card_assets' => [
+      '#theme' => 'admin_card_assets',
+      '#fonts' => [],
+      '#backgrounds' => [],
+    ],
+  ];
+}

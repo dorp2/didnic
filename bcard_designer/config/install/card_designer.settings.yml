@@ -1,0 +1,6 @@
+design_directory: 'public://designs'
+bcard_designer:
+  canvas_width: 850
+  canvas_height: 550
+  default_font: 'Arial'
+  default_font_size: 16

@@ -1,0 +1,78 @@
+<div class="container mt-4">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">تغییر ناوبری</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">| didnic |</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a onclick="_Front_Face()" href="#">روی کارت</a></li>
+          <li><a onclick="_Back_Face()" href="#">پشت کارت</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">افزودن شکل <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a onclick="_Rect_Create()" href="#">مربع</a></li>
+              <li><a onclick="_Circle_Create()" href="#">دایره</a></li>
+              <li><a onclick="_Triangle_Create()" href="#">مثلث</a></li>
+            </ul>
+          </li>
+          <li><a onclick="_Text_Create()" href="#">افزودن متن</a></li>
+        </ul>
+        <button class="btn btn-success navbar-btn navbar-right" id="file_save" type="button">ذخیره</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar">
+        <input id="colordesigner" type="color" onchange="_Color_Change()" />
+        <button class="btn btn-danger" id="Delete_item">حذف</button>
+        <button class="btn btn-default" onclick="_Bring_Forward()">به جلو</button>
+        <button class="btn btn-default" onclick="_Backwards()">به عقب</button>
+        <button class="btn btn-default" onclick="_Bring_Forward_One_Layer()">یک لایه به جلو</button>
+        <button class="btn btn-default" onclick="_Backwards_One_Layer()">یک لایه به عقب</button>
+        <select id="fontFamily" class="form-control" onchange="_Change_Font()">
+          {% for font in fonts %}
+            <option value="{{ font.url }}">{{ font.name }}</option>
+          {% endfor %}
+        </select>
+        <select id="fontSize" class="form-control" onchange="_Change_FontSize()">
+          <option value="10">10</option>
+          <option value="16">16</option>
+          <option value="20">20</option>
+          <option value="24">24</option>
+        </select>
+        <div class="btn-group" role="group">
+          <button class="btn btn-default" onclick="_Text_Bold()"><strong>ب</strong></button>
+          <button class="btn btn-default" onclick="_Text_Italic()"><em>ک</em></button>
+          <button class="btn btn-default" onclick="_Text_Underline()"><u>ز</u></button>
+        </div>
+        <h4>انتخاب پس‌زمینه</h4>
+        <select id="backgroundSelect" class="form-control" onchange="_Change_Background()">
+          <option value="">بدون پس‌زمینه</option>
+          {% for bg in backgrounds %}
+            <option value="{{ bg.url }}">{{ bg.name }}</option>
+          {% endfor %}
+        </select>
+        <h4>بارگذاری تصویر</h4>
+        <input type="file" id="ImageData" name="ImageData" class="form-control" required />
+        <h4>تصویر پس‌زمینه</h4>
+        <input type="file" id="ImageBackGroundData" name="ImageData" class="form-control" required />
+        <button class="btn btn-danger" onclick="_Delete_Background_Image()">حذف پس‌زمینه</button>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="canvas-container">
+        <canvas id="c" height="550" width="850"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

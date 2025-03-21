@@ -1,0 +1,67 @@
+<h1>{{ 'دارایی‌های طراح کارت ویزیت' }}</h1>
+<p>
+  <a href="{{ path('bcard_designer.upload_assets') }}" class="btn btn-primary">{{ 'آپلود دارایی جدید' }}</a>
+  <a href="{{ path('bcard_designer.admin_list') }}" class="btn btn-default">{{ 'بازگشت به لیست طرح‌ها' }}</a>
+</p>
+
+<h2>{{ 'فونت‌ها' }}</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{{ 'نام فونت' }}</th>
+      <th>{{ 'پیش‌نمایش' }}</th>
+      <th>{{ 'عملیات' }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for font in fonts %}
+      <tr>
+        <td>{{ font.name }}</td>
+        <td>
+          <div style="font-family: '{{ font.name }}'; font-size: 18px;">
+            {{ 'نمونه متن با این فونت' }}
+          </div>
+          <style>
+            @font-face {
+              font-family: '{{ font.name }}';
+              src: url('{{ font.url }}') format('truetype');
+            }
+          </style>
+        </td>
+        <td>
+          <a href="{{ path('bcard_designer.delete_asset', {'type': 'font', 'id': loop.index0}) }}" class="btn btn-danger btn-sm">{{ 'حذف' }}</a>
+        </td>
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="3">{{ 'هیچ فونتی آپلود نشده است.' }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>{{ 'پس‌زمینه‌ها' }}</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>{{ 'نام پس‌زمینه' }}</th>
+      <th>{{ 'پیش‌نمایش' }}</th>
+      <th>{{ 'عملیات' }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for bg in backgrounds %}
+      <tr>
+        <td>{{ bg.name }}</td>
+        <td><img src="{{ bg.url }}" alt="{{ bg.name }}" style="max-width: 100px; max-height: 100px;"></td>
+        <td>
+          <a href="{{ path('bcard_designer.delete_asset', {'type': 'background', 'id': loop.index0}) }}" class="btn btn-danger btn-sm">{{ 'حذف' }}</a>
+        </td>
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="3">{{ 'هیچ پس‌زمینه‌ای آپلود نشده است.' }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

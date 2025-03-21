@@ -1,0 +1,32 @@
+body {
+  direction: rtl;
+  font-family: 'Tahoma', sans-serif;
+  background-color: #f8f9fa;
+}
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.sidebar {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+.sidebar .btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.canvas-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+select, input[type="color"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+h4 {
+  margin-bottom: 15px;
+}

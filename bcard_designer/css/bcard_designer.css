@@ -1,0 +1,35 @@
+/* سبک‌های سفارشی برای ماژول کارت ویزیت */
+.sidebar {
+  padding: 15px;
+  background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+}
+
+.sidebar select,
+.sidebar input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.canvas-container {
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+/* تنظیمات برای سازگاری بهتر با راست به چپ */
+.navbar-nav {
+  float: right;
+}
+
+.navbar-nav > li {
+  float: right;
+}
+
+.navbar-right {
+  float: left !important;
+}
+
+/* اصلاح فاصله‌گذاری برای دکمه‌ها */
+.btn + .btn {
+  margin-right: 5px;
+}

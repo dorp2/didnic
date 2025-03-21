@@ -1,0 +1,30 @@
+administer bcard designer:
+  title: 'Administer Business Card Designer'
+  description: 'Allow users to access the Business Card Designer administration pages.'
+  restrict access: true
+administer bcard designs:
+  title: 'Administer business card designs'
+  description: 'Create, edit, and delete business card designs'
+
+administer bcard settings:
+  title: 'Administer business card designer settings'
+  description: 'Configure settings for the Business Card Designer module'
+use bcard designer:
+  title: 'Use Business Card Designer'
+  description: 'Allow users to use the Business Card Designer tool.'
+
+view card designs:
+  title: 'View business card designs'
+  description: 'Allow users to view business card designs.'
+
+add card designs:
+  title: 'Add business card designs'
+  description: 'Allow users to add new business card designs.'
+
+edit card designs:
+  title: 'Edit business card designs'
+  description: 'Allow users to edit business card designs.'
+
+delete card designs:
+  title: 'Delete business card designs'
+  description: 'Allow users to delete business card designs.'

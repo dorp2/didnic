@@ -1,0 +1,46 @@
+bcard_designer.admin_list:
+  path: '/admin/content/bcard-designs'
+  defaults:
+    _controller: '\Drupal\bcard_designer\Controller\AdminController::listDesigns'
+    _title: 'Business Card Designs'
+  requirements:
+    _permission: 'administer bcard designs'
+
+bcard_designer.settings:
+  path: '/admin/config/content/bcard-designer'
+  defaults:
+    _form: '\Drupal\bcard_designer\Form\SettingsForm'
+    _title: 'Business Card Designer Settings'
+  requirements:
+    _permission: 'administer bcard settings'
+
+bcard_designer.upload_assets:
+  path: '/admin/content/card-designs/upload-assets'
+  defaults:
+    _form: '\Drupal\bcard_designer\Form\AssetUploadForm'
+    _title: 'Upload Assets'
+  requirements:
+    _permission: 'administer card designs'
+
+bcard_designer.list_assets:
+  path: '/admin/content/card-designs/assets'
+  defaults:
+    _controller: '\Drupal\bcard_designer\Controller\CardDesignController::listAssets'
+    _title: 'Card Design Assets'
+  requirements:
+    _permission: 'administer card designs'
+
+entity.card_design.collection:
+  path: '/admin/content/card-designs'
+  defaults:
+    _entity_list: 'card_design'
+    _title: 'Card Designs'
+  requirements:
+    _permission: 'administer card designs'
+bcard_designer.delete_asset:
+  path: '/admin/content/card-designs/assets/{type}/{id}/delete'
+  defaults:
+    _controller: '\Drupal\bcard_designer\Controller\CardDesignController::deleteAsset'
+    _title: 'Delete Asset'
+  requirements:
+    _permission: 'administer card designs'

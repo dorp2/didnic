@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Business Card Designer module.
+ */
+
+use Drupal\Core\File\FileSystemInterface;
+
+/**
+ * Implements hook_install().
+ */
+function bcard_designer_install() {
+  // Create directory for storing card designs.
+  $directory = 'public://bcard_designs';
+  \Drupal::service('file_system')->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function bcard_designer_uninstall() {
+  // Remove card designs directory.
+  $directory = 'public://bcard_designs';
+  \Drupal::service('file_system')->deleteRecursive($directory);
+
+  // Remove module configuration.
+  \Drupal::configFactory()->getEditable('bcard_designer.settings')->delete();
+}

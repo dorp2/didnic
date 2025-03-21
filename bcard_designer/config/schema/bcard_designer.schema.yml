@@ -1,0 +1,7 @@
+bcard_designer.settings:
+  type: config_object
+  label: 'Business Card Designer settings'
+  mapping:
+    design_directory:
+      type: string
+      label: 'Directory for storing designs'

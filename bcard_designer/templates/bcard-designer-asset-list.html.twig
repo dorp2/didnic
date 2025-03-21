@@ -1,0 +1,29 @@
+<h2>{{ 'Fonts'|t }}</h2>
+<div class="row">
+  {% for font in fonts %}
+    <div class="col-md-3 mb-4">
+      <div class="card">
+        <img src="{{ font.thumbnail }}" class="card-img-top" alt="{{ font.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ font.name }}</h5>
+          <a href="{{ font.url }}" class="btn btn-primary" target="_blank">{{ 'Download'|t }}</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<h2>{{ 'Backgrounds'|t }}</h2>
+<div class="row">
+  {% for bg in backgrounds %}
+    <div class="col-md-3 mb-4">
+      <div class="card">
+        <img src="{{ bg.thumbnail }}" class="card-img-top" alt="{{ bg.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ bg.name }}</h5>
+          <a href="{{ bg.url }}" class="btn btn-primary" target="_blank">{{ 'Download'|t }}</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
